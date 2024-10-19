@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map with Inline GeoJSON</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Add the GeoJSON file directly here -->
+    <script src="substat.geojson" type="text/javascript"></script>
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { height: 100vh; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        // Initialize the map and set its view to a specific location
+        const map = L.map('map').setView([33.9716, -6.8498], 10); // Centered on Rabat, Morocco
+
+        // Add a tile layer (OpenStreetMap as the base map)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add the GeoJSON layer using the variable loaded in the head
+        L.geoJSON(subway).addTo(map);
+    </script>
+</body>
+</html>
