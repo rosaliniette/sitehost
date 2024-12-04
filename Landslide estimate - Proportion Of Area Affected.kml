@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<GroundOverlay id="3">
+	<name>Landslide estimate - Proportion Of Area Affected</name>
+	<Icon id="4">
+		<href>us7000kufc_jessee_2018_slim_model.tiff</href>
+	</Icon>
+	<LatLonBox>
+		<north>33.734375</north>
+		<south>28.215625</south>
+		<east>-5.015625000000015</east>
+		<west>-11.48437500000002</west>
+	</LatLonBox>
+</GroundOverlay>
+</kml>
