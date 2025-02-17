@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            background-color: #fefaf5;
+            font-family: 'Georgia', serif;
+            text-align: center;
+            padding: 40px;
+            color: #5a4233;
+        }
+        .login-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+            border: 2px solid #e6c6a6;
+            animation: fadeIn 1s ease-in;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #7d4e3b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #5a4233;
+            transform: scale(1.05);
+        }
+        .hint {
+            font-size: 12px;
+            color: gray;
+        }
+        .hidden {
+            display: none;
+        }
+        .letter-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+            border: 5px solid #e6c6a6;
+            animation: fadeIn 1.5s ease-in;
+            background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .error-shake {
+            animation: shake 0.3s;
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="login-form">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <p class="hint">Hint: The day our friendship started (DD/MM/YYYY)</p>
+        <button onclick="validateLogin()">Login</button>
+        <p id="error" style="color: red; display: none;">Incorrect username or password.</p>
+    </div>
+
+    <div class="hidden" id="letter-container">
+        <div class="letter-container">
+            <div class="floral">🌼🦋🌸</div>
+            <h1>Birthday Letter</h1>
+            <p class="date">Rabat, 17 February 2025</p>
+            <p><strong>From:</strong> Ikram</p>
+            <p><strong>To:</strong> Douae</p>
+            <hr>
+            <p>Happy 22, my bestie.</p>
+            <p>Four years in, and I still don’t know how to put into words what you mean to me. We’ve been through everything, highs that felt like we ruled the world and lows that would’ve been unbearable if not for each other. You’re someone I can fully be myself with and I cherish it with all my heart.</p>
+            <p>Now, here we are, stepping into 22, side by side, working toward the future we’ve both never thought of. It’s wild to think we’re about to finish this journey together, working on our final project, our final stretch before the next chapter. And if there’s one thing I’m sure of, it’s that we got this, and we’re gonna do just amazing, and that whatever comes next, you’ll always be a part of me.</p>
+            <p>So here’s to us growing, thriving, and figuring it all out as we go. To more years of laughter that turns into wheezing, conversations that last until the world fades out, and moments that feel like home.</p>
+            <p>Happy birthday. We’re in this, always.</p>
+            <p>To more daisy chronicles,</p>
+            <p class="signature">Your bestie!</p>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var error = document.getElementById("error");
+            var loginForm = document.getElementById("login-form");
+            if (username === "Douae" && password === "10/11/2021") {
+                loginForm.style.display = "none";
+                document.getElementById("letter-container").classList.remove("hidden");
+            } else {
+                error.style.display = "block";
+                loginForm.classList.add("error-shake");
+                setTimeout(() => loginForm.classList.remove("error-shake"), 300);
+            }
+        }
+    </script>
+</body>
+</html>
